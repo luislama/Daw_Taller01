@@ -1,0 +1,10 @@
+dataclasses==0.6
+Django==2.0.7
+django-bootstrap4==0.0.6
+djongo==1.2.29
+mongoengine==0.8.0
+pymongo==3.7.1
+python-dateutil==2.7.3
+pytz==2018.5
+six==1.11.0
+sqlparse==0.2.4

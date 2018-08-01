@@ -1,0 +1,79 @@
+nav{
+	background-color: #d3d3d3;
+}
+.navbar .container-fluid>.navbar-header {
+  margin-right: 10px;
+}
+
+.navbar-nav { 
+    flex-direction: row;
+}
+
+.navbar {
+	border: 1px solid black;
+}
+
+.navbar .navbar-nav {
+  margin: 5px;
+}
+
+.navbar-nav li {
+  padding: 5px;
+}
+
+.active {
+	font-weight: bold;
+}
+
+.img-responsive {
+	height: auto;
+	width: 100%;
+}
+
+h2 {
+	margin-left: 15px;
+	padding: 5px;
+}
+
+.user {
+	text-align: center;
+}
+
+.user ul {
+	text-align: left;
+}
+
+footer p {
+	text-align: center;
+}
+
+img{
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+img.icon {
+    border-radius: 50%;
+	height: auto;
+	width: 50%;
+	border: 1px solid black;
+}
+
+footer {
+	background-color: #d3d3d3;
+}
+
+#example {
+	width: 100%;
+}
+
+.selectToFilter {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.tdCenter{
+    text-align: center; 
+    vertical-align: middle;
+}
+

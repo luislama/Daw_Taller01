@@ -1,0 +1,91 @@
+
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block moreScripts%}
+	<script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+	<script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+	<script src="{% static 'js/usuarios/usuarios.js' %}"></script>
+{% endblock %}
+
+{% block moreStyle%}
+	<link rel="stylesheet" href="{% static 'css/jquery.dataTables.min.css' %}">
+{% endblock %}
+
+{% block navbarOptions %}
+	<ul class="nav navbar-nav">
+		<li class=""><a href="#"> Principal </a></li>
+		<li class=""><a href="#"> Servicios </a></li>
+		<li class="active"><a href="#"> Usuarios </a></li>
+		<li class=""><a href="#"> Nosotros </a></li>
+	</ul>			
+{% endblock %}
+
+{% block container %}
+	<div>
+		<div class="row">
+			<img class="img-responsive" src='{% static "img/default.png" %}'></img>
+		</div>
+		<div  style="width: 95%;margin:auto;">
+			<div class="row">
+				<h3>Reportes</h3>
+			</div>
+			<form action="usuarios" method="get">
+				<div class="form-row justify-content-center align-items-center">
+					<div id="filterByService" class="selectToFilter form-group-col-md-3">
+						<label for="servicioSeleccionado">
+							Servicio:
+						</label>
+						<select id="servicioSeleccionado" name="servicioSeleccionado" class=" form-control-sm">
+							{% for s in servicios %}
+								<option>{{ s.servicio }}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div id="filterByDate" class="selectToFilter form-group-col-md-3">
+						<label for="fechaSeleccionada">
+							Fecha:
+						</label>
+						<select id="fechaSeleccionada" name="fechaSeleccionada" class="form-control-sm">
+							{% for f in fechas %}
+							<option>{{ f.fecha }}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="selectToFilter form-group-col-md-3">
+						<input type="submit" value="Filtrar" class="selectToFilter btn btn-outline-secondary form-control form-control-sm btn-sm">	
+					</div>
+					
+				</div>
+			</form>
+			<div class="row">
+				<div class="" style="width: 100%;">
+					<table id="example" class="display" style="width:100%;">
+						<thead>
+							<tr>
+								<th>Nombre Completo</th>
+								<th class="tdCenter">Servicio</th>
+								<th class="tdCenter">Ciudad</th>
+								<th class="tdCenter">fecha</th>
+								<th class="tdCenter">Total de factura</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for reporte in reportes %}
+								<tr>
+									<td>{{reporte.nombre}}</td>
+									<td class="tdCenter">{{reporte.servicio}}</td>
+									<td class="tdCenter">{{reporte.ciudad}}</td>
+									<td class="tdCenter">{{reporte.fecha }}</td>
+									<td class="tdCenter">{{reporte.totalDeFactura}}</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}			
